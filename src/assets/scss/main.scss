@@ -1,0 +1,55 @@
+.red-asterisk {
+    color: #ec2128;
+}
+
+.login-text {
+    color: #213469 !important;
+    font-style: italic;
+}
+
+.requireText {
+    font-size: 10px;
+}
+
+.login-sub-card {
+    border-radius: 10px !important;
+    margin: auto !important;
+    border: 4px solid #283959 !important;
+    box-shadow: 0 0 50px #ccc;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+    .login-sub-card {
+        width: 350px !important;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .login-sub-card {
+        box-shadow: none !important;
+        margin-left: auto;
+        margin-right: auto;
+        width: 35%;
+        max-height: 540px !important;
+        justify-content: center !important;
+        // border: 1px solid #283959;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .login-sub-card {
+        height: 300px;
+        width: 180px !important;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .login-sub-card {
+        height: 350px;
+        width: 300px !important;
+    }
+}

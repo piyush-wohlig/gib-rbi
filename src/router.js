@@ -1,10 +1,7 @@
 // router.js
 
 import { createRouter, createWebHistory } from "vue-router";
-// import HomePage from "./components/HomePage.vue";
 import LoginPage from "./components/LoginPage.vue";
-import DashboardPage from "./components/DashboardPage.vue";
-import UnauthorizedPage from "./components/UnauthorizedPage.vue";
 
 const routes = [
     { 
@@ -12,21 +9,51 @@ const routes = [
         component: LoginPage
     },
     { 
-        path: '/login', 
+        path: '/login',
+        name: "login",
         component: LoginPage 
     },
-
     {
-        path: "/dashboard",
-        component: DashboardPage,
-        meta: {
-          requiresRole: "admin",
-        },
+        path: "/welcome",
+        name: "welcome",
+        component: () => import("./components/WelcomePage.vue"),
       },
+      {
+        path: "/organization-details",
+        name: "organization details",
+        component: () => import("./components/OrganizationDetails.vue"),
+      },
+      {
+        path: "/user-details",
+        name: "user details",
+        component: () => import("./components/UserDetails.vue"),
+      },
+      {
+        path: "/policy-form",
+        name: "policy form",
+        component: () => import("./components/PolicyForm.vue"),
+      },
+      {
+        path: "/department-form",
+        name: "department form",
+        component: () => import("./components/DepartmentForm.vue"),
+      },
+
+    //   {
+    //     path: "*",
+    //     name: "404Page",
+    //     meta: {
+    //       requiresAuth: false,
+    //     },
+    //     component: () => import("./components/404Page.vue"),
+    //   },
       {
         path: "/unauthorized",
         name: "unauthorized",
-        component: UnauthorizedPage,
+        meta: {
+            requiresRole: "SuperAdmin",
+        },
+        component: () => import("./components/UnauthorizedPage.vue"),
       }
 ];
 
@@ -34,6 +61,17 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+
+
+// export const routeGuards = (to, from, next) => {
+//     const isRootOrLogin = to.path === '/' || to.path === '/login';
+//     if (isRootOrLogin) {
+//       this.drawer = false;
+//     } else {
+//       this.drawer = true;
+//     }
+//     next();
+//   };
 
 // Global beforeEnter guard to check RBAC permissions
 // router.beforeEach((to, from, next) => {
