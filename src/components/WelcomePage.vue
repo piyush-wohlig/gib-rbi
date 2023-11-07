@@ -8,9 +8,9 @@
       </div>
       <div class="card-body px-lg-5 py-lg-5 text-center">
         <div class="text-center my-4">
-          <h2 style="color: black" class="animated-text">
+          <h1 style="color: #213467" class="animated-text">
             Welcome To {{ domainName }} Portal!
-          </h2>
+          </h1>
         </div>
       </div>
     </div>
@@ -20,8 +20,7 @@
 <script>
 import constants from "../../constants";
 export default {
-  components: {
-  },
+  components: {},
   data() {
     return {
       domainName: constants.domain,
@@ -40,16 +39,16 @@ export default {
 
 .main-welcome {
   background-color: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 10px;
-  border: 5px solid black;
+  border: 5px solid #213467;
   box-shadow: 0 0 50px #ccc;
   min-height: 150px;
 }
 
 @media only screen and (min-width: 768px) {
   .animated-text {
-    font-size: 24px;
+    /* font-size: 24px; */
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid transparent;

@@ -21,8 +21,7 @@
               <v-row>
                 <v-col cols="12" sm="12" md="12">
                   <v-text-field
-                    variant="solo"
-                    append-inner-icon="mdi-email"
+                    variant="outlined"
                     hide-details="auto"
                     placeholder="Enter your Email"
                     class="pb-0 custom-login"
@@ -30,6 +29,9 @@
                     v-model="form.email"
                     :rules="rules.email"
                   >
+                    <template v-slot:append-inner>
+                      <v-icon color="#213467">mdi-email</v-icon>
+                    </template>
                     <template v-slot:label>
                       <label
                         >Email Id <span class="red-asterisk">*</span></label
@@ -37,31 +39,6 @@
                     </template>
                   </v-text-field>
                 </v-col>
-                <!-- <v-col cols="12" sm="12" md="12">
-                  <v-text-field
-                    class="pt-0 custom-login"
-                    type="number"
-                    placeholder="Mobile Number"
-                    v-model="form.mobileNo"
-                    :rules="rules.mobileNo"
-                  >
-                  </v-text-field>
-                </v-col> -->
-                <!-- <v-col cols="12" sm="12" md="12">
-                  <v-text-field
-                    variant="solo"
-                    label="Password*"
-                    hide-details="auto"
-                    placeholder="Enter your Password"
-                    @click:append="showPassword = !showPassword"
-                    :type="showPassword ? 'text' : 'Password'"
-                    :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-                    class="pt-0 custom-login"
-                    v-model="form.password"
-                    :rules="rules.password"
-                  >
-                  </v-text-field>
-                </v-col> -->
                 <p class="text-left requireText pl-3">
                   <span class="red-asterisk">*</span> Indicates Required Field
                 </p>
@@ -69,7 +46,7 @@
                   <v-btn
                     :disabled="!valid"
                     block
-                    color="#283959"
+                    color="#213467"
                     height="50"
                     class="mt-1 mb-3 all-button poppins-medium"
                     type="submit"
@@ -92,26 +69,30 @@
               <v-row>
                 <v-col cols="12" sm="12" md="12">
                   <v-text-field
-                    variant="solo"
+                    variant="outlined"
                     label="Enter OTP"
                     hide-details="auto"
                     placeholder="Enter your OTP"
+                    @click:append-inner="toggleShowOtp"
                     maxLength="6"
                     class="pb-0 custom-login"
-                    @click:append-inner="showOtp = !showOtp"
                     :type="showOtp ? 'text' : 'Password'"
-                    :append-inner-icon="showOtp ? 'mdi-eye' : 'mdi-eye-off'"
                     onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 13"
                     v-model="form.otp"
                     :rules="rules.otp"
                   >
+                    <template v-slot:append-inner>
+                      <v-icon @click="toggleShowOtp" color="#213467">{{
+                        showOtp ? "mdi-eye" : "mdi-eye-off"
+                      }}</v-icon>
+                    </template>
                   </v-text-field>
                 </v-col>
                 <v-col cols="12" sm="12" md="12">
                   <v-btn
                     :disabled="form.otp.length == 6 ? false : true"
                     block
-                    color="#283959"
+                    color="#213467"
                     height="50"
                     class="mt-1 mb-3 all-button poppins-medium"
                     type="submit"
@@ -200,6 +181,9 @@ export default {
       this.showOtpForm = true;
       localStorage.setItem("data", data);
     },
+    toggleShowOtp() {
+      this.showOtp = !this.showOtp;
+    },
     async handleOtp() {
       if (!this.$refs.newform.validate()) {
         return;
@@ -225,8 +209,22 @@ export default {
     border: 1px solid #283959 !important;
   }
 }
+.v-text-field .v-field {
+  border-radius: 10px;
+}
+
+.custom-login {
+  background-color: #f7f9ff;
+}
+.poppins-medium {
+  border-radius: 10px;
+}
+
+.v-input__details {
+  background-color: white !important;
+}
 
 .v-field__append-inner {
-  color: #283959 !important;
+  color: #213467 !important;
 }
 </style>

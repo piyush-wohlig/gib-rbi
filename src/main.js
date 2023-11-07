@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
+import breakpoint from './plugins/breakpoint'
+import 'vuetify/dist/vuetify.min.css';
 import { loadFonts } from './plugins/webfontloader'
 import main from './assets/scss/main.scss'
 import Dropdown from 'primevue/dropdown';
@@ -14,6 +16,7 @@ loadFonts()
 createApp(App)
   .use(router)
   .use(vuetify)
+  .use(breakpoint)
   .use(main)
   .use(Dropdown)
   // .use(BootstrapVue)
