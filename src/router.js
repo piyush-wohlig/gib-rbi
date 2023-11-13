@@ -4,64 +4,61 @@ import { createRouter, createWebHistory } from "vue-router";
 import LoginPage from "./components/LoginPage.vue";
 
 const routes = [
-    { 
-        path: '/', 
-        component: LoginPage
-    },
-    { 
-        path: '/login',
-        name: "login",
-        component: LoginPage 
-    },
-    {
-        path: "/welcome",
-        name: "welcome",
-        component: () => import("./components/WelcomePage.vue"),
-      },
-      {
-        path: "/organization-details",
-        name: "organization details",
-        component: () => import("./components/OrganizationDetails.vue"),
-      },
-      {
-        path: "/user-details",
-        name: "user details",
-        component: () => import("./components/UserDetails.vue"),
-      },
-      {
-        path: "/policy-form",
-        name: "policy form",
-        component: () => import("./components/PolicyForm.vue"),
-      },
-      {
-        path: "/department-form",
-        name: "department form",
-        component: () => import("./components/DepartmentForm.vue"),
-      },
-
-    //   {
-    //     path: "*",
-    //     name: "404Page",
-    //     meta: {
-    //       requiresAuth: false,
-    //     },
-    //     component: () => import("./components/404Page.vue"),
-    //   },
-      {
-        path: "/unauthorized",
-        name: "unauthorized",
-        meta: {
-            requiresRole: "SuperAdmin",
-        },
-        component: () => import("./components/UnauthorizedPage.vue"),
-      }
+  {
+    path: "/",
+    component: LoginPage,
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: LoginPage,
+  },
+  {
+    path: "/welcome",
+    name: "welcome",
+    component: () => import("./components/WelcomePage.vue"),
+  },
+  {
+    path: "/user-management",
+    name: "user mangement",
+    component: () => import("./components/UserManagement.vue"),
+  },
+  {
+    path: "/organization",
+    name: "organization",
+    component: () => import("./components/OrganizationPage.vue"),
+  },
+  {
+    path: "/location",
+    name: "location",
+    component: () => import("./components/LocationPage.vue"),
+  },
+  {
+    path: "/department",
+    name: "department",
+    component: () => import("./components/DepartmentPage.vue"),
+  },
+  {
+    path: "/class-cadre",
+    name: "class/cadre",
+    component: () => import("./components/ClassCadre.vue"),
+  },
+  {
+    path: "/policy",
+    name: "policy",
+    component: () => import("./components/PolicyPage.vue"),
+  },
+  {
+    path: "/nodal-officer-mapping",
+    name: "nodal officer mapping",
+    component: () => import("./components/NodalOfficerMapping.vue"),
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
 });
-
 
 // export const routeGuards = (to, from, next) => {
 //     const isRootOrLogin = to.path === '/' || to.path === '/login';
