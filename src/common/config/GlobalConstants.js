@@ -41,4 +41,29 @@ export default {
     email_label: "e-mail",
     cin_label: "CIN",
   },
+  TOAST: {
+    MESSAGES: {
+      ERROR: {
+        
+      },
+      SUCCESS: {
+        otpSuccessful : "OTP Sent Successfully !",
+        loginSuccess: "Successfully Loggged In !"
+      },
+      INFO: {
+        noRelationsAdded: "No Relations Added In Family Definition!",
+        addAlternateRelation: "Please Add An Alternate Relation!",
+        pleaseaAddRelation: "Please Add A Relation!!",
+        allRelationsAlreadySelected: "All Relations Already Selected !",
+        minMaxReqd:
+          "Minimum And Maximum Age Necessary For Age Limit Or Exception!",
+      },
+    },
+    DURATION: 8000,
+    SEVERITY: {
+      SUCCESS: "success",
+      INFO: "info",
+      ERROR: "error",
+    },
+  },
 };

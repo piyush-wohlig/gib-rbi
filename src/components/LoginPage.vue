@@ -1,11 +1,19 @@
 <template>
   <div>
     <div class="layout-grid">
+      <!-- LEFT - IMAGE DESKTOP SECTION -->
       <div
         class="order__left centered no__overflow"
         :style="{ backgroundImage: `url(${loginPageImage})` }"
       ></div>
+
       <div class="order__right">
+        <!-- LOGIN HEADERBAR SECTION -->
+        <div>
+          <login-headerbar></login-headerbar>
+          <login-with-otp-component></login-with-otp-component>
+        </div>
+        <!-- FOOTER - SECTION -->
         <LoginFooter />
       </div>
     </div>
@@ -14,6 +22,8 @@
 
 <script setup>
 import LoginFooter from "@/common/footer/LoginFooter.vue";
+import loginHeaderbar from "@/common/header/LoginHeaderbar.vue";
+import loginWithOtpComponent from "@/common/loginComponent/loginWithOtpComponent.vue"
 import { ref } from "vue";
 const loginPageImage = ref(require("@/assets/images/money_welcome.png"));
 </script>

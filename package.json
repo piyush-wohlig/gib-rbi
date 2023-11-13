@@ -20,11 +20,13 @@
     "primeicons": "^6.0.1",
     "primevue": "^3.39.0",
     "roboto-fontface": "*",
+    "vee-validate": "^4.11.8",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5",
     "vue3-lazyload": "^0.3.8",
     "vuelidate": "^0.7.7",
-    "webfontloader": "^1.0.0"
+    "webfontloader": "^1.0.0",
+    "yup": "^1.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

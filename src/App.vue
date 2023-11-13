@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <SidebarLayout
+    <CommonHeader
       @drawerEvent="drawer = !drawer"
       v-if="$route.path !== '/' && $route.path !== '/login'"
     />
@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import SidebarLayout from "./layout/SidebarLayout.vue";
+import CommonHeader from "@/common/header/CommonHeader.vue";
 export default {
   name: "App",
   components: {
-    SidebarLayout,
+    CommonHeader,
   },
 
   data: () => ({
