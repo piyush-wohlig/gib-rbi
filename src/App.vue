@@ -1,9 +1,5 @@
 <template>
   <v-app>
-    <NavbarLayout
-      :drawer="drawer"
-      v-if="$route.path !== '/' && $route.path !== '/login'"
-    />
     <SidebarLayout
       @drawerEvent="drawer = !drawer"
       v-if="$route.path !== '/' && $route.path !== '/login'"
@@ -16,12 +12,10 @@
 </template>
 
 <script>
-import NavbarLayout from "./layout/NavbarLayout.vue";
 import SidebarLayout from "./layout/SidebarLayout.vue";
 export default {
   name: "App",
   components: {
-    NavbarLayout,
     SidebarLayout,
   },
 
