@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card card_menu">
     <TieredMenu
       class="ml-6 mt-5 custom-menu"
       :model="items"
@@ -16,37 +16,37 @@ import { ref } from "vue";
 const items = ref([
   {
     label: "User Management",
-    icon: "pi pi-home",
+    icon: "pi pi-user",
     to: "/user-mangement",
   },
   {
     label: "Organization",
-    icon: "pi pi-home",
+    icon: "pi pi-sitemap",
     to: "/organization",
   },
   {
     label: "location",
-    icon: "pi pi-home",
+    icon: "pi pi-map-marker",
     to: "/location",
   },
   {
     label: "Department",
-    icon: "pi pi-home",
+    icon: "pi pi-server",
     to: "/department",
   },
   {
     label: "Class/Cadre",
-    icon: "pi pi-home",
+    icon: "pi pi-verified",
     to: "/class-cadre",
   },
   {
     label: "Policy",
-    icon: "pi pi-home",
+    icon: "pi pi-shield",
     to: "/policy",
   },
   {
     label: "Nodal Officer Mapping",
-    icon: "pi pi-home",
+    icon: "pi pi-briefcase",
     to: "/nodal-officer-mapping",
   },
 ]);
@@ -58,6 +58,9 @@ const items = ref([
   border-radius: 20px;
 }
 
+.card_menu {
+  margin-top: 40%;
+}
 :deep(.p-tieredmenu .p-menuitem > .p-menuitem-content) {
   border-radius: 20px !important;
 }

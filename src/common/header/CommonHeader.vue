@@ -10,11 +10,11 @@
       </div>
     </div>
     <div class="flex">
+      <SidebarLayout />
       <div class="card flex justify-content-center lg:hidden">
         <Sidebar>
           <div class="wrapper-top">
             <HeaderbarLayout :position="header" />
-            <SidebarLayout :position="sidebar" />
           </div>
         </Sidebar>
         <!-- <Button @click="visible = true" :pt="{ root: { class: 'lg:hidden' } }">
@@ -64,6 +64,12 @@ const logoBg = ref(require("@/assets/images/maze2.png"));
 <style lang="scss" scoped>
 .login-header1 {
   padding: 0px !important;
+}
+
+.company-logo {
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 2%;
 }
 .custom-message-icon {
   width: 32px;
@@ -197,8 +203,8 @@ const logoBg = ref(require("@/assets/images/maze2.png"));
       }
     }
     .company-logo-wrapper {
-      //   justify-content: flex-end;
-      //   margin: 0;
+      justify-content: flex-end;
+      margin: 0;
     }
   }
 

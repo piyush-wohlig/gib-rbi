@@ -326,6 +326,7 @@ const classVal = ref([
 .content-wrapper {
   max-width: 1600px;
   padding: 0 20px;
+  padding-top: 13%;
   margin: 0 auto;
   width: 100%;
   overflow: hidden;
