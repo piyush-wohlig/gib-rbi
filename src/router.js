@@ -16,7 +16,22 @@ const routes = [
   {
     path: "/user-management",
     name: "user mangement",
-    component: () => import("./components/UserManagement.vue"),
+    component: () => import("./components/UserManagement/UserManagement.vue"),
+  },
+  {
+    path: "/user-management/edit",
+    name: "edit user mangement",
+    component: () => import("./components/UserManagement/EditUserManagement.vue"),
+  },
+  {
+    path: "/user-management/import",
+    name: "import user mangement",
+    component: () => import("./components/UserManagement/ImportUserManagement.vue"),
+  },
+  {
+    path: "/user-management/view",
+    name: "view user mangement",
+    component: () => import("./components/UserManagement/ViewUserManagement.vue"),
   },
   {
     path: "/organization",

@@ -1,9 +1,6 @@
 <template>
   <v-app>
-    <CommonHeader
-      v-if="$route.path !== '/' && $route.path !== '/login'"
-    />
-    
+    <CommonHeader v-if="$route.path !== '/' && $route.path !== '/login'" />
     <v-main>
       <router-view />
     </v-main>
@@ -29,3 +26,4 @@ export default {
   },
 };
 </script>
+
