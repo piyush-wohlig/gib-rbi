@@ -1,5 +1,5 @@
 <template>
-  <header class="login-header flex justify-content-between">
+  <header class="login-header login-header1 justify-content-between">
     <div class="company-logo-wrapper flex align-items-center">
       <div
         class="client-name-wrapper flex align-items-center bg-img"
@@ -62,6 +62,9 @@ const logoBg = ref(require("@/assets/images/maze2.png"));
 </script>
 
 <style lang="scss" scoped>
+.login-header1 {
+  padding: 0px !important;
+}
 .custom-message-icon {
   width: 32px;
   height: 32px;
@@ -194,8 +197,8 @@ const logoBg = ref(require("@/assets/images/maze2.png"));
       }
     }
     .company-logo-wrapper {
-      justify-content: flex-end;
-    //   margin: 0;
+      //   justify-content: flex-end;
+      //   margin: 0;
     }
   }
 

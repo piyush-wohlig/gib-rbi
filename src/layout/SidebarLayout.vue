@@ -1,87 +1,56 @@
 <template>
   <div class="card">
-    <div class="mobile-menu" v-if="props.position == 'sidebar'">
-      <PanelMenu
-        :model="sidebarMenu"
-        class="w-full"
-        :disabled="changePassword"
-      />
-    </div>
-    <div v-else>
-      <div
-        class="skeleton-wrap p-2 ml-6 mt-5 custom-menu p-tieredmenu"
-        v-if="showSkeleton"
-      >
-        <Skeleton class="mb-2 h-2rem"></Skeleton>
-        <Skeleton class="mb-2 h-2rem"></Skeleton>
-        <Skeleton class="mb-2 h-2rem"></Skeleton>
-        <Skeleton class="mb-2 h-2rem"></Skeleton>
-        <Skeleton class="mb-2 h-2rem"></Skeleton>
-        <Skeleton class="mb-2 h-2rem"></Skeleton>
-      </div>
-      <TieredMenu
-        v-if="!showSkeleton"
-        class="ml-6 mt-5 custom-menu"
-        :model="sidebarMenu"
-        :disabled="changePassword"
-        orientation="vertical"
-        :exact="true"
-      />
-    </div>
+    <TieredMenu
+      class="ml-6 mt-5 custom-menu"
+      :model="items"
+      orientation="vertical"
+      :exact="true"
+    />
   </div>
 </template>
 
 <script setup>
-import { ref, defineProps } from "vue";
+import { ref } from "vue";
 
-const sidebarMenu = ref([]);
-const props = defineProps(["position"]);
 
-sidebarMenu.value = updateDataMapping();
+const items = ref([
+  {
+    label: "User Management",
+    icon: "pi pi-home",
+    to: "/user-mangement",
+  },
+  {
+    label: "Organization",
+    icon: "pi pi-home",
+    to: "/organization",
+  },
+  {
+    label: "location",
+    icon: "pi pi-home",
+    to: "/location",
+  },
+  {
+    label: "Department",
+    icon: "pi pi-home",
+    to: "/department",
+  },
+  {
+    label: "Class/Cadre",
+    icon: "pi pi-home",
+    to: "/class-cadre",
+  },
+  {
+    label: "Policy",
+    icon: "pi pi-home",
+    to: "/policy",
+  },
+  {
+    label: "Nodal Officer Mapping",
+    icon: "pi pi-home",
+    to: "/nodal-officer-mapping",
+  },
+]);
 
-const updateDataMapping = () => {
-  const items = ref([
-    {
-      label: "User Management",
-      icon: "pi pi-home",
-      to: "/user-mangement",
-    },
-    {
-      label: "Organization",
-      icon: "pi pi-home",
-      to: "/organization",
-    },
-    {
-      label: "location",
-      icon: "pi pi-home",
-      to: "/location",
-    },
-    {
-      label: "Department",
-      icon: "pi pi-home",
-      to: "/department",
-    },
-    {
-      label: "Class/Cadre",
-      icon: "pi pi-home",
-      to: "/class-cadre",
-    },
-    {
-      label: "Policy",
-      icon: "pi pi-home",
-      to: "/policy",
-    },
-    {
-      label: "Nodal Officer Mapping",
-      icon: "pi pi-home",
-      to: "/nodal-officer-mapping",
-    },
-  ]);
-
-  if (props.position == "sidebar") {
-    items.value;
-  }
-};
 </script>
 
 <style lang="scss" scoped>

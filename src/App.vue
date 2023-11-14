@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <CommonHeader v-if="$route.path !== '/' && $route.path !== '/login'" />
+    <!-- <CommonHeader v-if="$route.path !== '/' && $route.path !== '/login'" /> -->
     <v-main>
       <router-view />
     </v-main>
@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import CommonHeader from "@/common/header/CommonHeader.vue";
+// import CommonHeader from "@/common/header/CommonHeader.vue";
 export default {
   name: "App",
   components: {
-    CommonHeader,
+    // CommonHeader,
   },
 
   data: () => ({
