@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <CommonHeader
-      @drawerEvent="drawer = !drawer"
       v-if="$route.path !== '/' && $route.path !== '/login'"
     />
     
@@ -21,7 +20,7 @@ export default {
 
   data: () => ({
     cards: ["Today", "Yesterday"],
-    drawer: null,
+    // drawer: null,
   }),
   methods: {
     // toggleSidebar() {

@@ -14,11 +14,6 @@ const routes = [
     component: LoginPage,
   },
   {
-    path: "/welcome",
-    name: "welcome",
-    component: () => import("./components/WelcomePage.vue"),
-  },
-  {
     path: "/user-management",
     name: "user mangement",
     component: () => import("./components/UserManagement.vue"),

@@ -11,18 +11,10 @@
     </div>
     <div class="flex">
       <div class="card flex justify-content-center lg:hidden">
-        <Sidebar
-          v-model:visible="visible"
-          :pt="{
-            root: { style: 'backgroundColor:#F6FEFF' },
-            content: {
-              class: 'flex flex-column justify-content-between',
-            },
-          }"
-        >
+        <Sidebar>
           <div class="wrapper-top">
             <HeaderbarLayout :position="header" />
-            <SidebarLayout :position="'sidebar'" />
+            <SidebarLayout :position="sidebar" />
           </div>
         </Sidebar>
         <!-- <Button @click="visible = true" :pt="{ root: { class: 'lg:hidden' } }">
@@ -64,10 +56,9 @@ import SidebarLayout from "@/layout/SidebarLayout.vue";
 import HeaderbarLayout from "@/layout/HeaderbarLayout.vue";
 
 // const clientLogo = ref(require("@/assets/images/client-logo.png"));
-const visible = ref(false);
+// const visible = ref(false);
 const companyLogo = ref(require("@/assets/images/Layer_1.png"));
 const logoBg = ref(require("@/assets/images/maze2.png"));
-
 </script>
 
 <style lang="scss" scoped>
@@ -204,7 +195,7 @@ const logoBg = ref(require("@/assets/images/maze2.png"));
     }
     .company-logo-wrapper {
       justify-content: flex-end;
-      margin: 0;
+    //   margin: 0;
     }
   }
 
