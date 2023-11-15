@@ -24,7 +24,7 @@
             }}</span>
           </div>
 
-          <Button class="login-btn" label="Send OTP" @click="sendOtpFunc()" />
+          <Button class="login-btn" label="Send OTP" @click.prevent="sendOtpFunc()" />
 
           <div class="form-group otp-class" :style="{ width: '100%' }">
             <span class="p-input-icon-right" :style="{ width: '100%' }">
@@ -34,8 +34,6 @@
                   v-model="otp"
                   :type="showOtp ? 'text' : 'password'"
                   autocomplete="off"
-                  @change="onInputChange"
-                  @input="onInputChange"
                 />
                 <label for="otp" class="text-xs required">Enter OTP</label>
                 <i
@@ -80,6 +78,8 @@
             type="submit"
             class="login-btn"
             label="Submit"
+            :disabled="!otp"
+            :class="{ 'disabled-button': !otp }"
             @click="loginOnSubmit()"
           />
         </div>
@@ -141,6 +141,9 @@ const loginOnSubmit = () => {
 <style scoped lang="scss">
 .otp-class {
   margin-top: 35px;
+}
+.disabled-button {
+  background-color: #adadad !important;
 }
 :deep(.p-float-label label) {
   transform: translateY(-60%);
